@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  good photo
+//  camera
 //
-//  Created by apple on 3/1/19.
-//  Copyright © 2019 tonyjiang. All rights reserved.
+//  Created by administrator on 3/2/19.
+//  Copyright © 2019 Richy Chen. All rights reserved.
 //
 
 import UIKit
+import Photos
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        PHPhotoLibrary.requestAuthorization { (status:PHAuthorizationStatus) -> Void in
+            print(status)
+        }
         return true
     }
 
